@@ -42,8 +42,20 @@ class ViewController: UIViewController, WKNavigationDelegate {
         myActivityIndicator.stopAnimating()
         myActivityIndicator.isHidden = true
     }
-
+    
+    // 파라미터 앞에 _가 붙으면 함수 호출 시 파라미터 명을 명시적으로 작성하지 않아도 된다.
+    func checkUrl(_ url: String) -> String {
+        var strUrl = url
+        let flag = strUrl.hasPrefix("http://")
+        if !flag {
+            strUrl = "http://" + strUrl
+        }
+        return strUrl
+    }
     @IBAction func btnGotoUrl(_ sender: UIButton) {
+        let myUrl = checkUrl(txtUrl.text!)
+        txtUrl.text = ""
+        loadWebPage(myUrl)
     }
     @IBAction func btnGoSite1(_ sender: UIButton) {
         loadWebPage("http://google.com")
