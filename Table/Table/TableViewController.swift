@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableTableViewController: UITableViewController {
+class TableViewController: UITableViewController {
     
 
     @IBOutlet var tvListView: UITableView!
