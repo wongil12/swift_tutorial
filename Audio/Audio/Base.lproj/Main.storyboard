@@ -61,21 +61,30 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="63.333333333333336" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Play"/>
+                                                <connections>
+                                                    <action selector="btnPlayAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gjn-VP-gN0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdl-JO-RVr">
                                                 <rect key="frame" x="145.33333333333334" y="0.0" width="63.333333333333343" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Pause"/>
+                                                <connections>
+                                                    <action selector="btnPauseAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EeS-Rr-3GV"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm3-hL-SEb">
                                                 <rect key="frame" x="290.66666666666669" y="0.0" width="63.333333333333314" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Stop"/>
+                                                <connections>
+                                                    <action selector="btnStopAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WrO-oa-Vi9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="7qA-lV-WkN">
-                                        <rect key="frame" x="35" y="248" width="313" height="30"/>
+                                        <rect key="frame" x="33" y="248" width="317" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuY-Az-X2i">
                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
@@ -84,10 +93,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YpQ-uU-ycD">
-                                                <rect key="frame" x="77" y="0.0" width="238" height="31"/>
+                                                <rect key="frame" x="77" y="0.0" width="242" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="230" id="8PH-DJ-iHM"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="slChangeVolume:" destination="BYZ-38-t0r" eventType="valueChanged" id="NkJ-OU-kEe"/>
+                                                </connections>
                                             </slider>
                                         </subviews>
                                     </stackView>
@@ -101,6 +113,15 @@
                             <constraint firstItem="fjc-66-s3v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zpz-BM-sRm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnPause" destination="jdl-JO-RVr" id="M1z-Vl-gTX"/>
+                        <outlet property="btnPlay" destination="eUF-nj-74d" id="1FI-HK-TME"/>
+                        <outlet property="btnStop" destination="qm3-hL-SEb" id="YEh-1e-dTm"/>
+                        <outlet property="lblCurrentTime" destination="NXH-kF-op3" id="jI0-ui-4ha"/>
+                        <outlet property="lblEndTime" destination="iem-Rx-6ww" id="nW2-mn-ZCt"/>
+                        <outlet property="pvProgressPlay" destination="A9t-V8-86X" id="7LV-vr-pHT"/>
+                        <outlet property="slVolume" destination="YpQ-uU-ycD" id="kGR-ak-fyT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
