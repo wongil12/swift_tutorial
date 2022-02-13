@@ -14,6 +14,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var audioFile: URL!
     let MAX_VOLUME: Float = 10.0
     var progressTimer: Timer!
+    
+    let timePlayerSelector:Selector = #selector(ViewController.updatePlayTime)
 
     @IBOutlet var pvProgressPlay: UIProgressView!
     @IBOutlet var lblCurrentTime: UILabel!
@@ -67,6 +69,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func btnPlayAudio(_ sender: UIButton) {
         audioPlayer.play()
         setPlayButtons(false, pause: true, stop: true)
+        progressTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: timePlayerSelector, userInfo: nil, repeats: true)
+    }
+    
+    @objc func updatePlayTime() {
+        lblCurrentTime.text = convertNSTimeInterval2String(audioPlayer.currentTime)
+        pvProgressPlay.progress = Float(audioPlayer.currentTime/audioPlayer.duration)
     }
     
     @IBAction func btnPauseAudio(_ sender: UIButton) {
@@ -76,10 +84,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func btnStopAudio(_ sender: UIButton) {
         audioPlayer.stop()
+        audioPlayer.currentTime = 0
+        lblCurrentTime.text = convertNSTimeInterval2String(0)
         setPlayButtons(true, pause: false, stop: false)
+        progressTimer.invalidate()
     }
     
     @IBAction func slChangeVolume(_ sender: UISlider) {
+        audioPlayer.volume = slVolume.value
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        progressTimer.invalidate()
+        setPlayButtons(true, pause: false, stop: false)
     }
 }
 
