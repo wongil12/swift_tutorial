@@ -27,6 +27,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet var slVolume: UISlider!
     
+    @IBOutlet var btnRecord: UIButton!
+    @IBOutlet var lblRecordTime: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         audioFile = Bundle.main.url(forResource: "Sicilian_Breeze", withExtension: "mp3")
@@ -98,5 +102,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         progressTimer.invalidate()
         setPlayButtons(true, pause: false, stop: false)
     }
+    @IBAction func swRecordMode(_ sender: UISwitch) {
+    }
+    @IBAction func btnRecord(_ sender: UIButton) {
+    }
+    
 }
 
