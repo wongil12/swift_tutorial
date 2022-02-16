@@ -16,6 +16,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
     var progressTimer: Timer!
     
     let timePlayerSelector:Selector = #selector(ViewController.updatePlayTime)
+    let timeRecordSelector:Selector = #selector(ViewController.updateRecordTime)
 
     @IBOutlet var pvProgressPlay: UIProgressView!
     @IBOutlet var lblCurrentTime: UILabel!
@@ -135,6 +136,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         pvProgressPlay.progress = Float(audioPlayer.currentTime/audioPlayer.duration)
     }
     
+    @objc func updateRecordTime() {
+        lblRecordTime.text = convertNSTimeInterval2String(audioRecorder.currentTime)
+    }
+    
     @IBAction func btnPauseAudio(_ sender: UIButton) {
         audioPlayer.pause()
         setPlayButtons(true, pause: false, stop: false)
@@ -178,6 +183,17 @@ class ViewController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDe
         }
     }
     @IBAction func btnRecord(_ sender: UIButton) {
+        if (sender as AnyObject).titleLabel?.text == "Record" {
+            audioRecorder.record()
+            (sender as AnyObject).setTitle("Stop", for: UIControl.State())
+            progressTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: timeRecordSelector, userInfo: nil, repeats: true)
+        } else {
+            audioRecorder.stop()
+            progressTimer.invalidate()
+            (sender as AnyObject).setTitle("Record", for: UIControl.State())
+            btnPlay.isEnabled = true
+            initPlay()
+        }
     }
     
 }
