@@ -108,6 +108,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="poV-WG-SHa" secondAttribute="trailing" constant="16" id="ggU-3V-lkY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="txtMessage" destination="cqY-xF-Ejh" id="Fs1-wu-IyX"/>
+                        <outlet property="txtTapCount" destination="vC7-7F-BhV" id="YzM-pd-N0j"/>
+                        <outlet property="txtTouchCount" destination="fz8-P4-us3" id="yoa-l1-gIq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
