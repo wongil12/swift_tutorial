@@ -13,6 +13,7 @@
 		76B533A627CF8907003F289A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B533A427CF8907003F289A /* Main.storyboard */; };
 		76B533A827CF8909003F289A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76B533A727CF8909003F289A /* Assets.xcassets */; };
 		76B533AB27CF8909003F289A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B533A927CF8909003F289A /* LaunchScreen.storyboard */; };
+		76B533B327CF8BC3003F289A /* img-06.png in Resources */ = {isa = PBXBuildFile; fileRef = 76B533B227CF8BC3003F289A /* img-06.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		76B533A727CF8909003F289A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76B533AA27CF8909003F289A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76B533AC27CF8909003F289A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76B533B227CF8BC3003F289A /* img-06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img-06.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		76B5339D27CF8907003F289A /* PinchGesture */ = {
 			isa = PBXGroup;
 			children = (
+				76B533B227CF8BC3003F289A /* img-06.png */,
 				76B5339E27CF8907003F289A /* AppDelegate.swift */,
 				76B533A027CF8907003F289A /* SceneDelegate.swift */,
 				76B533A227CF8907003F289A /* ViewController.swift */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76B533AB27CF8909003F289A /* LaunchScreen.storyboard in Resources */,
+				76B533B327CF8BC3003F289A /* img-06.png in Resources */,
 				76B533A827CF8909003F289A /* Assets.xcassets in Resources */,
 				76B533A627CF8907003F289A /* Main.storyboard in Resources */,
 			);
